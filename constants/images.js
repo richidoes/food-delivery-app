@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 
 const avatar_1 = require("../assets/images/avatar-1.jpg");
 const avatar_2 = require("../assets/images/avatar-2.jpg");
@@ -56,6 +57,7 @@ export default {
   noodle_shop,
   pizza_restaurant,
   pizza,
+  salad,
   sarawak_laksa,
   sushi,
   teh_c_peng,

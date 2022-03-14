@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  SafeAreaView, 
   View, 
   Text,
   TouchableOpacity,
@@ -8,12 +7,13 @@ import {
   FlatList
 } from 'react-native';
 import { object } from 'prop-types';
-import { StatusBar } from 'expo-status-bar';
 
 import { COLORS, FONTS, icons } from '../constants';
 import { categoryData, restaurantData, initialCurrentLocation, priceRating } from '../data/dummyData';
 import styles from './Home.styles';
-import SvgCircle from '../patterns/atoms/SvgCircle';
+import SvgCircle from '../patterns/atoms/svg/SvgCircle';
+import HeaderTitle from '../patterns/atoms/HeaderTitle';
+import Page from '../patterns/atoms/Page';
 
 const Home = ({ navigation }) => {
   const [categories] = useState(categoryData);
@@ -60,11 +60,11 @@ const Home = ({ navigation }) => {
         />
       </TouchableOpacity>
 
-      <View style={styles.locationContainer}>
-        <View style={styles.locationTextWrapper}>
-          <Text style={{ ...FONTS.h3}}>{currentLocation.streetName}</Text>
-        </View>
-      </View>
+      <HeaderTitle 
+        title={currentLocation.streetName} 
+        titleContainerStyles={styles.titleContainer}
+        titleWrapperStyles={styles.titleTextWrapper}
+      />
 
       <TouchableOpacity style={styles.basketIconContainer}>
         <Image 
@@ -131,7 +131,7 @@ const Home = ({ navigation }) => {
       return (
         <TouchableOpacity
           style={styles.restaurantCardButton}
-          onPress={() => navigation.navigate('Restaurant', item, currentLocation)}
+          onPress={() => navigation.navigate('Restaurant', { item, currentLocation} )}
         >
           <View style={styles.restaurantCardContent}>
             <Image
@@ -207,14 +207,11 @@ const Home = ({ navigation }) => {
   };
 
   return (
-    <>
-      <StatusBar backgroundColor='black' />
-      <SafeAreaView style={styles.container}>
-        {renderHeader()}
-        {renderMainCategories()}
-        {renderRestaurantList()}
-      </SafeAreaView>
-    </>
+    <Page style={styles.container}>
+      {renderHeader()}
+      {renderMainCategories()}
+      {renderRestaurantList()}
+    </Page>
   );
 };
 

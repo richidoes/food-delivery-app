@@ -1,7 +1,7 @@
 import { number, object, string } from 'prop-types';
 import React from 'react';
 import Svg, { Circle } from 'react-native-svg';
-import { COLORS } from '../../constants';
+import { COLORS } from '../../../constants';
 
 const SvgCircle = ({ 
   height = 5, 

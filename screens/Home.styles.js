@@ -29,12 +29,12 @@ export default StyleSheet.create({
     width: 30,
     height: 30
   },
-  locationContainer: {
+  titleContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
   },
-  locationTextWrapper: {
+  titleTextWrapper: {
     width: '70%',
     height: '100%',
     backgroundColor: COLORS.lightGray3,
