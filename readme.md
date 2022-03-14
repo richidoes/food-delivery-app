@@ -12,4 +12,4 @@ npm install
 npm start
 ```
 
-**Code,idea and resources** based on this React Native tutorial: [<img src="./doc/youtube.png" width="32" />](https://www.youtube.com/watch?v=diUDjNwZ8Lg&t=6227s)
+**Code,idea and resources** based on this React Native tutorial: [<img src="./assets/images/youtube.png" width="32" />](https://www.youtube.com/watch?v=diUDjNwZ8Lg&t=6227s)
